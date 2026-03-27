@@ -2,12 +2,12 @@
 using namespace std;
 main()
 {
-    int n, count=0;
-    cout<<"enter number: ";
-    cin>>n;
-    for(int x=n;x>0;x=x/10)
+    int n[5];
+    for(int count=0;count < 5;count=count+1)
     {
-        count=count+1;
+      cout<<"Enter number: ";
+      cin>>n[count];
     }
-    cout<<"Total digits: "<<count<<endl;
+    cout<<"first element in array is: "<<n[0]<<endl;
+    cout<<"Last element in array is: "<<n[4]<<endl;
 }

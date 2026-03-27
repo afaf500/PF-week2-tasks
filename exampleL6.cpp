@@ -1,14 +1,18 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 main()
 {
-    int i,j,rows;
-    cout<<"Enter number of rows: ";
-    cin>>rows;
-    for(i=1;i<=rows;i=i+1)
+    int sum=0;
+    float average=0;
+    int numbers[5]={1,2,3,4,5};
+
+    for(int idx=0;idx<5;idx=idx+1)
     {
-        for(j=1;j<=i;j=j+1)
-      { cout<<"*";}
-        cout<<"\n";
+        sum=sum+numbers[idx];
     }
+    average=sum/5;
+    cout<<"Sum: "<<sum<<endl;
+    cout<<"Average: "<<average<<endl;
+
+    
 }

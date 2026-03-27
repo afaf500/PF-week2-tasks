@@ -1,45 +1,41 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 main()
 {
-    int age,toyprice;
-    double machineprice;
-    cout<<"Enter your age: ";
-    cin>>age;
-    cout<<"Enter per toy price: ";
-    cin>>toyprice;
-    cout<<"Enter machine price: ";
-    cin>>machineprice;
+    int n;
+    cout<<"Enter number of flights: ";
+    cin>>n;
 
-    double moneysaved=0 , nextgiftmoney=10;
+    int num[n];
+    string dest[n];
+    int seats[n];
 
-    int toycount=0;
-
-    for(int i=1;i<=age;i++)
+    for(int i=0;i<n;i++)
     {
-        if(i%2==0)
+        cout<<"Enter flight number for flight: "<<i+1<<" ";
+        cin>>num[i];
+        cout<<"Enter destination for flight: "<<num[i]<<" ";
+        cin>>dest[i];
+        cout<<"Enter seats available for flight: "<<num[i]<<" ";
+        cin>>seats[i];
+    }
+    cout<<"---------------------------------------------------"<<endl;
+    cout<<"         Flight Information                      "<<endl;
+     for(int i=0;i<n;i++)
+
+     {
+        cout<<"flight"<<num[i]<<" has "<<seats[i]<<" available"<<endl;
+     }
+      cout<<"-------------------------------------------------"<<endl;
+     cout<<"Flights with less than 5 seats available."<<endl;
+
+     for(int i=0;i<n;i++)
+     {
+        if(seats[i]<5)
         {
-            moneysaved=moneysaved+nextgiftmoney-1;
-    
-            nextgiftmoney=nextgiftmoney+10;
+            cout<<"flight"<<num[i]<<"has"<<seats[i]<<"available."<<endl;
         }
-        else
-        {
-            toycount=toycount+1;
-        }
-    }
+     }
 
-    moneysaved=moneysaved+(toycount*toyprice);
-    
-
-    if(moneysaved>=machineprice)
-    {
-        cout<<"Yes! "<<moneysaved-machineprice<<endl;
-
-    }
-    else
-    {
-        cout<<"No!"<<machineprice-moneysaved<<endl;
-    }
 
 }

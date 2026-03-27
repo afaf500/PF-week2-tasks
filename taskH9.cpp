@@ -2,36 +2,58 @@
 using namespace std;
 main()
 {
-    double  money;
-    int targetyear,age=18;
-
-    cout<<"Enter money: ";
-    cin>>money;
-    cout<<"Enter year: ";
-    cin>>targetyear;
-    
-    for(int i =1800; i<=targetyear; i++)
+    int choice;
+    int count=0;
+    string book[2];
+    cout<<"-------------------------------"<<endl;
+    cout<<"      Library Menu               "<<endl;
+    cout<<"-------------------------------"<<endl;
+  
+    for(int i=0;i<7;i++)
     {
-        if( i%2==0)
-        {  money=money-12000;
-        }
-        else
+         cout<<" 1. Add book.      "<<endl;
+         cout<<" 2. view book.     "<<endl;
+         cout<<" 3. Borrow book.   "<<endl;
+         cout<<" 4. Exit           "<<endl;
+         cout<<"   Enter choice    "<<endl;
+         cin>>choice;
+
+         if(choice==1)
         {
-            money=money-(12000+50*age);
+            cout<<"Add book name: ";
+            getline(cin,book[count]);
+            count++;
+            cout<<"Book added successfully."<<endl;
         }
-        age++;
+        else if(choice==2)
+        {
+        for(int i=0;i<count;i++)
+        {
+            cout<<i+1<<"."<<book[i]<<endl;
+        }
+        } 
+
+        else if(choice==3)
+        {
+            string name;
+            cout<<"Book name: ";
+            getline(cin,name);
+            cout<<"book "<<name<<"has been borrowed."<<endl;
+
+        }
+
+        else if  (choice==4)
+        {
+        cout<<"Thankyou for using this application."<<endl;
+        }
+
+        else{
+            cout<<"invalid choice."<<endl;
+        }
+         
+        
     }
-    if(money>=0)
-    {
-        cout<<"yes he will have carefree life and will have: "<<money<<"left"<<endl;
-    }
-    else
-    {
-        cout<<"He will need "<<-money<<" to survive."<<endl;
-    }
+
+
+
 }
-
-        
-        
-    
-

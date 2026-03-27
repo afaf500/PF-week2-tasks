@@ -9,7 +9,7 @@ main()
     n[3]=19;
     n[4]=10;
 
-    cout<<"The first element at location n[0] is  "<<n[0]<<endl;
-    cout<<"The last element at location n[0] is "<<n[4]<<endl;
+    cout<<"The fourth element at location n[0] is  "<<n[3]<<endl;
+    cout<<"The second element at location n[0] is "<<n[1]<<endl;
     
 }
