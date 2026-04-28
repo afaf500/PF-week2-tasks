@@ -1,17 +1,19 @@
 #include<iostream>
 using namespace std;
+
+int value1=10;
+int value2=20;
+
+int sum(){
+    value1=40;
+    return value1+value2;
+}
 main()
 {
-    int n;
-    int count=0;
-    cout<<"Enter number of elements: ";
-    cin>>n;
-    cout<<"Enter "<<n<<"number of elements one per line: "<<endl;
-    int arr[n];
-    for(int i=0;i<n;i++)
-    {
-        cin>>arr[i];
-        count=count+arr[i];
-    }
-    cout<<"sum of array: "<<count<<endl;
+    int x=value1;
+    value1=100;
+    x=20;
+    value2=sum();
+    cout<<value1<<", "<<value2;
+    
 }
