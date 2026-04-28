@@ -1,22 +1,35 @@
-#include<iostream>
-#include<algorithm>
+#include <iostream>
 using namespace std;
+
+bool isStrong(int num)
+{
+    int original=num;
+    int totalsum=0;
+
+    while(num>0)
+    {
+        int digit=num%10;
+        int fact=1;
+        for(int i=1;i<=digit;i++)
+        {
+            fact=fact*i;
+        }
+        totalsum=totalsum+fact;
+        num=num/10;
+    }
+    return(totalsum==original);
+}
 main()
 {
-    int n;
-    cout<<"Enter number of students: ";
-    cin>>n;
-    cout<<"Enter "<< n<<"names per line."<<endl;
-    string name[n];
-    for(int i=0;i<n;i++)
+    int number;
+    cout<<"Enter a number: ";
+    cin>>number;
+    if(isStrong(number))
     {
-        cin>>name[i];
+        cout<<"Strong number"<<endl;
+        
     }
-    sort(name,name+n);
-    cout<<"Student name in alphabatical order "<<endl;
-
-      for(int i=0;i<n;i++)
-    {
-        cout<<name[i]<<endl;
+    else{
+        cout<<"Not strong numner."<<endl;
     }
 }

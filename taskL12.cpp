@@ -1,24 +1,32 @@
-#include<iostream>
+#include <iostream>
+#include <string>
 using namespace std;
+string numberToText(int num)
+{
+    string units[]={"","one","two","three","four","five","six","seven","eight","nine"};
+    string teens[]={"ten","eleven","twelve","thirteen","fouteen","fifteen","sixteen","seventeen","eighteen","nineteen"};
+    string tens[]={"","","twenty","thirty","fourty","fifty","sixty","seventy","eighty","ninety"};
+
+    if(num<10)
+    {
+        return units[num];
+    }
+    if(num<20)
+    {
+        return teens[num-10];
+    }
+    return tens[num/10]+units[num%10];
+
+}
 main()
 {
-    string word;
-    string result=" ";
-    
-    cout<<"Enter a string: ";
-    getline(cin,word);
-
-    for(int i=0;i<word.length();i++)
+    int n;
+    cout<<"Enter a number:";
+    cin>>n;
+    if(n>=1 && n<=99)
     {
-        char c=word[i];
-    
-    if(c =='a' || c =='e' || c =='i' || c =='o' || c =='u' || c =='A' || c =='E' || c =='I' || c =='O' ||c =='U' )
-     {
-
-     }
-    else{
-        result=result+c;
-     }
+        string result =numberToText(n);
+        cout<<result<<endl;
     }
-    cout<<"String with vowels removed: "<<result<<endl;
+    return 0;
 }

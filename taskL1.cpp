@@ -1,21 +1,20 @@
 #include <iostream>
 using namespace std;
+int add(int num1,int num2){
+    int sum=num1+num2;
+    return sum;
+
+}
+
+
 main()
 {
-    int num;
-    cout<<"Enter number of inputs you want to enter: ";
-    cin>>num;
-    int* n= new int [num];
-    for(int count=0;count < num;count=count+1)
-    {
-        cout<<"Enter number: ";
-        cin>>n[count];
-    }
-    for(int count=0; count < num; count++)
-    {
-        cout<<"number entered: "<<n[count]<<endl;
-    }
-
-    delete[]n;
-    return 0;
+    int num1;
+    int num2;
+    cout<<"Enter number 1: ";
+    cin>>num1;
+    cout<<"Enter number 2: ";
+    cin>>num2;
+    add(num1,num2);
+    cout<<add(num1,num2);
 }

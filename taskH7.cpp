@@ -1,29 +1,32 @@
 #include <iostream>
 using namespace std;
+
+float calculateBalance(float balance,int years)
+{
+    float rate;
+    if(balance<10000 )
+    {
+        rate=0.05;
+    }
+    else if(balance<=50000)
+    {
+        rate=0.07;
+    }
+    else
+    {
+        rate=0.10;
+    }
+    if(years>=3)
+    {
+        rate=rate+0.02;
+    }
+    return balance+(balance*rate);
+}
 main()
 {
-    int n1[4],n;
-    cout<<"Enter number of product ";
-    cin>>n;
-    string item[n];
-    float price[n];
-    float quantity[n];
-
-    for(int i=0;i<n;i++)
-    {
-        cout<<"Enter name of product: ";
-        cin>>item[i];
-        cout<<"Enter price of product: ";
-        cin>>price[i];
-        cout<<"Enter quantity of product: ";
-        cin>>quantity[i];
-    }
-    
-    
-    cout<<"Product Inventory Report."<<endl;
-    cout<<"---------------------------------"<<endl;
-    for(int i=0;i<n;i++)
-    {
-        cout<<price[i] <<" , "<<quantity[i]<<" in stock.total price: "<<price[i]*quantity[i]<<endl;
-    }
+    float b;
+    int y;
+    cout<<"Enter balance and year: "<<endl;
+    cin>>b>>y;
+    cout<<"Updated balance: "<<calculateBalance(b,y)<<endl;
 }

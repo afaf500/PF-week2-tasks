@@ -1,26 +1,12 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 main()
 {
-    int n;
-    cout<<"Enter the number of elements:";
-    cin>>n;
-    if(n<=0){cout<<"Invalid input.Number of elements must be greater than zero"<< endl;}
-
-
-     int arr[n];
-     cout<<"Enter "<<n<<" Number one per line"<<endl;
-    for(int i=0; i<n; i++)
-    {
-        cin >>arr[i];
-    }
-    cout<<"Numbers in reverse order ";
-
-    for(int i=n-1;i>=0;i--)
-    {
-        cout<<arr[i]<<" ";
-    }
-    cout<<endl;
-    return 0;
-
+    int num1,num2;
+    cout<<"Enter the base number: ";
+    cin>>num1;
+    cout<<"Enter the exponent number: ";
+    cin>>num2;
+    cout<<"the power is:  "<<pow(num1,num2);
 }

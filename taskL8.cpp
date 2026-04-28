@@ -1,19 +1,26 @@
 #include <iostream>
+#include <string>
 using namespace std;
-main()
-{
-    int n;
-    float sum=0.0;
-    cout<<"Enter the number of resistors in series cicuit:";
-    cin>>n;
-    float arr[n];
-    for(int i=0;i<n;i++)
-    {
-        cin>>arr[i];
+
+char capSmall(char alphabet){
+    char letter=alphabet; 
+    if(letter>='a' && letter<='z')
+    { 
+        
+        cout<<"You entered small "<<letter;
     }
-    for(int i=0;i<arr[i];i++)
-    
-      { sum =sum+arr[i];}
-    
-    cout<<"Total resistance:"<<sum<<endl;
+    if(letter>='A' && letter<='Z')
+    {
+        cout<<"You entered capital: "<<letter;
+    }
+    return letter;
 }
+    main()
+    {
+        char letter;
+        cout<<"Enter Alphabet(A/a): ";
+        cin>>letter;
+        capSmall(letter);
+    }
+
+

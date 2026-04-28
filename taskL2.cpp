@@ -1,16 +1,12 @@
-#include<iostream>
+#include <iostream>
+#include <windows.h>
 using namespace std;
 main()
 {
-    
-    char word[50];
-
-
-    cout<<"Enter a word: ";
-    cin>>word;
-
-    for(int i=0;word[i] != '\0';i++)
+    while(true)
     {
-        cout<<word[i] <<" is found at position: "<<i<<endl;
+        cout<<"Name: ";
+        Sleep(200);
     }
+   
 }

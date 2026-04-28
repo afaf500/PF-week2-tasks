@@ -1,25 +1,43 @@
 #include <iostream>
+#include<string>
+#include<cmath>
 using namespace std;
+
+string pyramidVolume(double length,double width,double height,string unit)
+{
+double volumeInMetres=(length * width * height)/3.0;
+double resultVolume=0.0;
+
+if(unit=="millimetres")
+{
+    resultVolume=volumeInMetres * pow(1000,3);
+}
+if(unit == "metres")
+{
+    resultVolume=volumeInMetres;
+}
+if(unit =="centimetres" )
+{
+    resultVolume=volumeInMetres * pow(100 ,3);
+}
+if(unit == "kilometres")
+{
+    resultVolume=volumeInMetres /pow(1000,3);
+}
+return to_string(resultVolume)+"cubic"+unit;
+}
 main()
 {
-    int n,count=0;
-    bool even=false;
-    cout<<"Enter number of elements: ";
-    cin>>n;
-    cout<<"Enter "<<n<<"numbers one per line"<<endl;
-    int arr[n];
-    for(int i=0;i<n;i++)
-    {
-        cin>>arr[i];
-        if(i%2==0)
-        {
-           even=true;
-           count++;
-        }
-    }
-    if(even==true)
-    {
-        cout<<"Total even numbers: "<<count<<endl;
-    }
+    double l,w,h;
+    string unit;
+    cout<<"Enter length,width,height(in metres): "<<endl;
+    cin>>l>>w>>h;
+
+    cout<<"Enter output unit(millimetres,metres,centimetres,kilometres): "<<endl;
+    cin>>unit;
+
+    cout<<pyramidVolume(l,w,h,unit)<<endl;
+    return 0;
+
 
 }

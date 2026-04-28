@@ -1,18 +1,12 @@
 #include<iostream>
+#include<cmath>
 using namespace std;
 main()
 {
-    string word;
-    cout<<"Enter a word : ";
-    cin>>word;
-
-    int totalLetter=word.length();
-    cout<<"Reverse word: ";
-
-    for(int i=totalLetter-1;i>=0;i--)
-    {
-        cout<<word[i];
-    }
-    cout<<endl;
-    return 0;
+int num1,num2;
+    cout<<"Enter the 1 number: ";
+    cin>>num1;
+    cout<<"Enter 2nd number: ";
+    cin>>num2;
+    cout<<"The greatest of 2 numbers is : "<<max(num1,num2);
 }

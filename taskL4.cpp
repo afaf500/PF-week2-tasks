@@ -1,34 +1,12 @@
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <cmath>
 using namespace std;
 main()
 {
-    string text;  
-    cout<<"Enter a word: ";
-    getline(cin,text);
-    
-
-    for(int i =0;i<text.length();i++)
-    {
-        char current=text[i];
-
-        if(current>='a' && current<='z' )
-        {
-            if(current=='z') { text[i]='a';}
-            else { text[i]=current+1;}
-        }
-    
-         else if (current>='A' && current<='Z')
-         {
-            if(current=='Z') {text[i]='A';}
-            else {text[i]=current +1;}
-         }
-   }
-   cout<<"Shifted string:"<<text<<endl;
-   return 0;
+    int num1,num2;
+    cout<<"Enter the first number: ";
+    cin>>num1;
+    cout<<"Enter the second number: ";
+    cin>>num2;
+    cout<<"Minimum of 2 numbers is : "<<min(num1,num2);
 }
-
-        
-
-    
-    
